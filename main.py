@@ -1,18 +1,14 @@
 # Na začátku přivítá uživatele.
-
-
+print("Vítej v aplikaci, prosím o přihlášení!")
 
 
 # Vyžádá si od uživatele přihlašovací jméno a heslo.
-
-
+print('Prosím o zadání přihlašovacího jména a hesla:')
+login = input('Přihlašovací jméno: ')
+pw = input('Heslo: ')
 
 
 # Zjistí, jestli zadané údaje odpovídají někomu z registrovaných uživatelů.
-
-
-
-
 # Registrováni jsou následující uživatelé:
 #| USER |   PASSWORD  |
 #-----------------------
