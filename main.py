@@ -1,24 +1,21 @@
+oddelovac = ('=' *80)
+oddelovac2 = ('=' *40)
+zadani_user = ['bob', 'ann', 'mike', 'liz']
+zadani_pw = ['123', 'pass123', 'password123', 'pass123']
+
 # Na začátku přivítá uživatele.
 print("Vítej v aplikaci, prosím o přihlášení!")
+print(oddelovac2)
 
-
-# Vyžádá si od uživatele přihlašovací jméno a heslo.
-print('Prosím o zadání přihlašovacího jména a hesla:')
-login = input('Přihlašovací jméno: ')
-pw = input('Heslo: ')
-
-
+# Vyžádá si od uživatele přihlašovací jméno a heslo
 # Zjistí, jestli zadané údaje odpovídají někomu z registrovaných uživatelů.
-# Registrováni jsou následující uživatelé:
-#| USER |   PASSWORD  |
-#-----------------------
-#| bob  |     123     |
-#| ann  |    pass123  |
-#mike | password123 |
-#| liz  |    pass123  |
-#Pokud se ti tento úkol bude zdát složitý, prověř, jestli zadané údaje jsou mezi registrovanými, ale neřeš spojení uživatel - heslo.
 
-
+zadej1 = str(input('Přihlašovací jméno: '))
+zadej2 = str(input('Heslo: '))
+print(oddelovac2)
+print('Zadané přihlašovací jméno je:', zadej1 in zadani_user)
+print('Zadané přihlašovací heslo je:', zadej2 in zadani_pw)
+print(oddelovac2)
 
 
 # Program nechá uživatele vybrat mezi třemi texty, uloženými v proměnné TEXTS.
