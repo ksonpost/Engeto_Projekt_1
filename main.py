@@ -3,26 +3,25 @@ oddelovac = ('=' *80)
 oddelovac2 = ('=' *40)
 zadani_user = ['bob', 'ann', 'mike', 'liz']
 zadani_pw = ['123', 'pass123', 'password123', 'pass123']
-TEXTS = ['''
-Situated about 10 miles west of Kemmerer, 
+TEXTS1 = '''Situated about 10 miles west of Kemmerer, 
 Fossil Butte is a ruggedly impressive 
 topographic feature that rises sharply 
 some 1000 feet above Twin Creek Valley 
 to an elevation of more than 7500 feet 
 above sea level. The butte is located just 
 north of US 30N and the Union Pacific Railroad, 
-which traverse the valley. ''',
+which traverse the valley.'''
 
-'''At the base of Fossil Butte are the bright 
+TEXTS2 = '''At the base of Fossil Butte are the bright 
 red, purple, yellow and gray beds of the Wasatch 
 Formation. Eroded portions of these horizontal 
 beds slope gradually upward from the valley floor 
 and steepen abruptly. Overlying them and extending 
 to the top of the butte are the much steeper 
 buff-to-white beds of the Green River Formation, 
-which are about 300 feet thick.''',
+which are about 300 feet thick.'''
 
-'''The monument contains 8198 acres and protects 
+TEXTS3 = '''The monument contains 8198 acres and protects 
 a portion of the largest deposit of freshwater fish 
 fossils in the world. The richest fossil fish deposits 
 are found in multiple limestone layers, which lie some 
@@ -31,7 +30,11 @@ represent several varieties of perch, as well as
 other freshwater genera and herring similar to those 
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
-]
+
+TEXTS_ALL = [TEXTS1, TEXTS2, TEXTS3]
+
+
+TEXTS4_pocet = ['that rises sharply some', 1000, 'feet above Twin Creek Valley to an elevation of more than', 7500, 'feet above sea level. The butte is located just north of US 30N']
 
 # 1. Na začátku přivítá uživatele.
 print("Vítej v aplikaci, prosím o přihlášení!")
@@ -48,15 +51,36 @@ print(oddelovac2)
 
 # 4. Program nechá uživatele vybrat mezi třemi texty, uloženými v proměnné TEXTS.
 vyber_text = int(input('Vyber si svůj text zadáním hodnoty 1, 2, nebo 3: '))
-vybrani_textu = TEXTS[vyber_text - 1]
+vybrani_textu = TEXTS_ALL[vyber_text - 1]
 print('Tvůj vybraný text je: ' + vybrani_textu)
 
-# 5. Pro vybraný text spočítá následující statistiky:
-#- počet slov,
-#- počet slov začínajících velkým písmenem,
-#- počet slov psaných velkými písmeny,
-#- počet slov psaných malými písmeny,
-#- počet čísel (ne cifer!).
+
+# 5. Pro vybraný text spočítá následující statistiky: (počet slov ; počet slov začínajících velkým písmenem ; počet slov psaných velkými písmeny ; počet slov psaných malými písmeny ; počet čísel (ne cifer!))
+print(oddelovac2)
+
+for char in '-.,\n':
+    TEXTS1=TEXTS1.replace(char,' ')
+    TEXTS1=TEXTS1.lower()
+pocet_slov_1 = TEXTS1.split()
+
+if vyber_text == 1:
+    print('Počet slov vybraného textu je: ',len(pocet_slov_1))
+
+for char in '-.,\n':
+    TEXTS2=TEXTS2.replace(char,' ')
+    TEXTS2=TEXTS2.lower()
+pocet_slov_2 = TEXTS2.split()
+if vyber_text == 2:
+    print('Počet slov vybraného textu je: ',len(pocet_slov_2))
+
+for char in '-.,\n':
+    TEXTS3=TEXTS3.replace(char,' ')
+    TEXTS3=TEXTS3.lower()
+pocet_slov_3 = TEXTS3.split()
+if vyber_text == 3:
+    print('Počet slov vybraného textu je: ',len(pocet_slov_3))
+
+print(oddelovac2)
 
 
 
@@ -77,7 +101,5 @@ print('Tvůj vybraný text je: ' + vybrani_textu)
 #Twin Creek Valley to an elevation of more
 #than 7500 feet above sea level. The butte
 #is located just north of US 30N"
-
-
-
-
+#text_pocet_vysledek = count(int(text_pocet))
+#print(text_pocet_vysledek)
